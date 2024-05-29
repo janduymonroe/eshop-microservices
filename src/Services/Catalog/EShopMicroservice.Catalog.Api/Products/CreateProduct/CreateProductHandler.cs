@@ -17,12 +17,17 @@ public record CreateProductCommand(string Name, List<string> Category, string De
 };
 public record CreateProductResult(Guid Id);
 
-internal sealed class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
+internal sealed class CreateProductCommandHandler(IDocumentSession session) 
+    : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
         // Business logic to create a product.
         var product = command.ToModel();
+
+        session.Store(product);
+
+        await session.SaveChangesAsync(cancellationToken);
 
         return new CreateProductResult(Guid.NewGuid());
     }

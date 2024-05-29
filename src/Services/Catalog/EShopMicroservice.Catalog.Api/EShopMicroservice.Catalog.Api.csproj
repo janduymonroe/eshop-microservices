@@ -7,16 +7,17 @@
     <UserSecretsId>c3fc21d2-5b9d-40d6-a718-413f8a91d2a3</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
 	<PackageReference Include="Carter" Version="8.2.0" />
+	<PackageReference Include="Marten" Version="7.16.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Exceptions\" />
   </ItemGroup>
 
   <ItemGroup>
