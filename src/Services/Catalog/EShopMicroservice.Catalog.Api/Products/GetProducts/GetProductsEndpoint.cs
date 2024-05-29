@@ -1,8 +1,6 @@
-﻿using EShopMicroservice.Catalog.Api.Models;
+﻿namespace EShopMicroservice.Catalog.Api.Products.GetProducts;
 
-namespace EShopMicroservice.Catalog.Api.Products.GetProducts;
-
-public record GetProductsRequest();
+//public record GetProductsRequest();
 public record GetProductsResponse(IEnumerable<Product> Products);
 
 public class GetProductsEndpoint : ICarterModule

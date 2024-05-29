@@ -1,6 +1,4 @@
-﻿using BuldingBlocks.CQRS;
-using EShopMicroservice.Catalog.Api.Models;
-
+﻿
 namespace EShopMicroservice.Catalog.Api.Products.GetProducts;
 
 public record GetProductsQuery() : IQuery<GetProductsResult>;

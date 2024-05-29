@@ -1,7 +1,4 @@
-﻿
-using EShopMicroservice.Catalog.Api.Products.GetProducts;
-
-namespace EShopMicroservice.Catalog.Api.Products.GetProductById;
+﻿namespace EShopMicroservice.Catalog.Api.Products.GetProductById;
 
 //public record GetProductByIdRequest(Guid Id);
 public record GetProductByIdResponse(Product Product);
