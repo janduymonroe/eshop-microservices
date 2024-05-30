@@ -1,8 +1,10 @@
-﻿namespace EShopMicroservice.Catalog.Api.Exceptions;
+﻿using BuldingBlocks.Exceptions;
 
-public class ProductNotFoundException : Exception
+namespace EShopMicroservice.Catalog.Api.Exceptions;
+
+public class ProductNotFoundException : NotFoundException
 {
-    public ProductNotFoundException() : base("Product not found!")
+    public ProductNotFoundException(Guid id) : base("Product", id)
     {
         
     }

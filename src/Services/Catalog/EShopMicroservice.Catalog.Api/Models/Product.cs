@@ -12,9 +12,9 @@ public class Product
     public void Update(string name, List<string> category, string description, string imageFile, decimal price)
     {
         Name = name;
-        Category = category;
-        Description = description;
-        ImageFile = imageFile;
+        Category = category ?? Category;
+        Description = description ?? Description;
+        ImageFile = imageFile ?? ImageFile;
         Price = price;
     }
 }
