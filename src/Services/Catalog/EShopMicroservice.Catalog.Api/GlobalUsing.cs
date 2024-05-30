@@ -8,3 +8,4 @@ global using BuldingBlocks.CQRS;
 global using FluentValidation;
 global using BuldingBlocks.Behaviours;
 global using BuldingBlocks.Exceptions.Handler;
+global using EShopMicroservice.Catalog.Api.Data;
