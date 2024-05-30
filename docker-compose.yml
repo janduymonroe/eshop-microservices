@@ -4,6 +4,13 @@ services:
   catalogdb:
     image: postgres
 
+  eshopmicroservice.catalog.api:
+    image: ${DOCKER_REGISTRY-}eshopmicroservicecatalogapi
+    build:
+      context: .
+      dockerfile: src/Services/Catalog/EShopMicroservice.Catalog.Api/Dockerfile
+
 volumes:
   postgres_catalog:
+
 
