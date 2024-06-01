@@ -5,3 +5,8 @@ global using MediatR;
 global using Mapster;
 global using FluentValidation;
 global using BuldingBlocks.Behaviours;
+global using Marten;
+global using BuldingBlocks.Exceptions;
+global using EShopMicroservice.Basket.Api.Exception;
+global using EShopMicroservice.Basket.Api.Data;
+global using BuldingBlocks.Exceptions.Handler;

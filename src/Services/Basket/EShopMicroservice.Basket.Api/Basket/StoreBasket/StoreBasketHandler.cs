@@ -1,6 +1,4 @@
-﻿
-
-namespace EShopMicroservice.Basket.Api.Basket.StoreBasket;
+﻿namespace EShopMicroservice.Basket.Api.Basket.StoreBasket;
 
 public record StoreBasketCommand(ShoppingCart Cart) : ICommand<StoreBasketResult>;
 
@@ -15,18 +13,17 @@ public class StoreBasketCommandValidator : AbstractValidator<StoreBasketCommand>
     }
 }
 
-public class StoreBasketHandler 
+public class StoreBasketHandler(IBasketRepository repository) 
     : ICommandHandler<StoreBasketCommand, StoreBasketResult>
 {
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
     {
-        var cart = command.Cart;
-        
+        await repository.StoreBasketAsync(command.Cart);
         // TODO: Store basket logic
         
         // TODO: Update cache
 
-        return new StoreBasketResult("swn");
+        return new StoreBasketResult(command.Cart.UserName);
     }
 }
 
