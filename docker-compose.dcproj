@@ -7,7 +7,7 @@
     <ProjectGuid>b63422c8-4d81-4553-b171-6013744f624c</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>eshopmicroservice.catalog.api</DockerServiceName>
+    <DockerServiceName>eshopmicroservice.basket.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
