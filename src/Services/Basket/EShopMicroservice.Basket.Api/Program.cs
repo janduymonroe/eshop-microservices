@@ -1,9 +1,12 @@
+using EShopMicroservice.Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service to the container
+
+// Application Services
 builder.Services.AddCarter();
 var assembly = typeof(Program).Assembly;
 builder.Services.AddMediatR(cfg =>
@@ -18,6 +21,7 @@ var redis = builder.Configuration.GetConnectionString("Redis")!;
 
 builder.Services.AddValidatorsFromAssembly(assembly);
 
+// Data Services
 builder.Services.AddMarten(opt =>
 {
     opt.Connection(database);
@@ -32,6 +36,22 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.Configuration = redis;
 });
 
+// gRPC Services
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(opt =>
+{
+    opt.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+})
+    .ConfigurePrimaryHttpMessageHandler(() =>
+{
+    var handler = new HttpClientHandler
+    {
+        ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+    };
+
+    return handler;
+}); ;
+
+// Cross-Cutting services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 builder.Services.AddHealthChecks()
