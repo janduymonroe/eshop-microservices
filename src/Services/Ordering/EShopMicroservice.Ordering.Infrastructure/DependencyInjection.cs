@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EShopMicroservice.Ordering.Infrastructure;
@@ -11,10 +10,10 @@ public static class DependencyInjection
     {
         var connectionString = configuration.GetConnectionString("Database");
 
-        //services.AddDbContext<OrderingContext>(options =>
-        //    options.UseSqlServer(connectionString));
+        services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(connectionString));
 
-        //services.AddScoped<IOrderDbContext, OrderDbContext>();
+        //services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
         return services;
     }
