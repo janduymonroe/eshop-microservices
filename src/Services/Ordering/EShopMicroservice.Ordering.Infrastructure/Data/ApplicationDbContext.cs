@@ -1,8 +1,9 @@
-﻿using System.Reflection;
+﻿using EShopMicroservice.Ordering.Application.Data;
+using System.Reflection;
 
 namespace EShopMicroservice.Ordering.Infrastructure.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options) { }

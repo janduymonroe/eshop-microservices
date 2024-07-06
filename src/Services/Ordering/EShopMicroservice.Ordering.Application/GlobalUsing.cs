@@ -1,0 +1,10 @@
+﻿global using EShopMicroservice.Ordering.Domain.Models;
+global using Microsoft.EntityFrameworkCore;
+global using EShopMicroservice.Ordering.Domain.ValueObject;
+global using BuldingBlocks.CQRS;
+global using EShopMicroservice.Ordering.Application.Data;
+global using EShopMicroservice.Ordering.Application.Dtos;
+global using EShopMicroservice.Ordering.Application.Exceptions;
+global using EShopMicroservice.Ordering.Domain.Events;
+global using MediatR;
+global using Microsoft.Extensions.Logging;

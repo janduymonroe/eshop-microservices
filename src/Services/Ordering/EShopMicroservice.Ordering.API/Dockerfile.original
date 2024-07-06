@@ -10,10 +10,6 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/Services/Ordering/EShopMicroservice.Ordering.API/EShopMicroservice.Ordering.API.csproj", "src/Services/Ordering/EShopMicroservice.Ordering.API/"]
-COPY ["src/Services/Ordering/EShopMicroservice.Ordering.Application/EShopMicroservice.Ordering.Application.csproj", "src/Services/Ordering/EShopMicroservice.Ordering.Application/"]
-COPY ["src/BuildingBlocks/BuldingBlocks/BuldingBlocks.csproj", "src/BuildingBlocks/BuldingBlocks/"]
-COPY ["src/Services/Ordering/EShopMicroservice.Ordering.Domain/EShopMicroservice.Ordering.Domain.csproj", "src/Services/Ordering/EShopMicroservice.Ordering.Domain/"]
-COPY ["src/Services/Ordering/EShopMicroservice.Ordering.Infrastructure/EShopMicroservice.Ordering.Infrastructure.csproj", "src/Services/Ordering/EShopMicroservice.Ordering.Infrastructure/"]
 RUN dotnet restore "./src/Services/Ordering/EShopMicroservice.Ordering.API/EShopMicroservice.Ordering.API.csproj"
 COPY . .
 WORKDIR "/src/src/Services/Ordering/EShopMicroservice.Ordering.API"

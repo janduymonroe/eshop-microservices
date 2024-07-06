@@ -19,7 +19,7 @@ public record Payment
         PaymentMethod = paymentMethod;
     }
 
-    public static Payment Create(string cardHolderName, string cardNumber, string cardExpiration, string cardSecurityNumber, int paymentMethod)
+    public static Payment Of(string cardHolderName, string cardNumber, string cardExpiration, string cardSecurityNumber, int paymentMethod)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(cardHolderName, nameof(cardHolderName));
         ArgumentException.ThrowIfNullOrWhiteSpace(cardNumber, nameof(cardNumber));

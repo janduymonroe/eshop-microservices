@@ -11,18 +11,23 @@ public class Order : Aggregate<OrderId>
     public Payment Payment { get; private set; } = default!;
     public OrderStatus Status { get; private set; } = OrderStatus.Pending;
 
-    public decimal TotalPrice => _orderItems.Sum(x => x.Price * x.Quantity);
+    public decimal TotalPrice 
+    {
+        get => _orderItems.Sum(x => x.Price * x.Quantity);
+        private set { }
+    }
 
-    public static Order Create(CustomerId customerId, OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment)
+    public static Order Create(OrderId id, CustomerId customerId, OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment)
     {
         var order =  new Order
         {
-            Id = OrderId.Of(Guid.NewGuid()),
+            Id = id,
             CustomerId = customerId,
             OrderName = orderName,
             ShippingAddress = shippingAddress,
             BillingAddress = billingAddress,
-            Payment = payment
+            Payment = payment,
+            Status = OrderStatus.Pending
         };
 
         order.AddDomainEvent(new OrderCreatedEvent(order));
