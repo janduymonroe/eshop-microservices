@@ -7,11 +7,11 @@ services:
   basketdb:
     image: postgres
 
-  distributedcache:
-    image: redis
-
   orderdb:
     image: mcr.microsoft.com/mssql/server
+
+  distributedcache:
+    image: redis
 
   eshopmicroservice.catalog.api:
     image: ${DOCKER_REGISTRY-}eshopmicroservicecatalogapi
@@ -31,9 +31,17 @@ services:
       context: .
       dockerfile: src/Services/Discount/EShopMicroservice.Discount.Grpc/Dockerfile
 
+  eshopmicroservice.ordering.api:
+    image: ${DOCKER_REGISTRY-}eshopmicroserviceorderingapi
+    build:
+      context: .
+      dockerfile: src/Services/Ordering/EShopMicroservice.Ordering.API/Dockerfile
+
 volumes:
   postgres_catalog:
   postgres_basket:
+  mssql_order:
+
 
 
 
