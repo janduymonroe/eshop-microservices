@@ -1,0 +1,9 @@
+﻿global using Carter;
+global using EShopMicroservice.Ordering.Application.Dtos;
+global using EShopMicroservice.Ordering.Application.Orders.Commands.CreateOrder;
+global using EShopMicroservice.Ordering.Application.Orders.Commands.UpdateOrder;
+global using EShopMicroservice.Ordering.Application.Orders.Commands.DeleteOrder;
+global using EShopMicroservice.Ordering.Application.Orders.Queries.GetOrdersByName;
+global using EShopMicroservice.Ordering.Application.Orders.Queries.GetOrdersByCustomer;
+global using Mapster;
+global using MediatR;

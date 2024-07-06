@@ -15,4 +15,8 @@
     <ProjectReference Include="..\EShopMicroservice.Ordering.Domain\EShopMicroservice.Ordering.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
 </Project>

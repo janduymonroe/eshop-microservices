@@ -1,6 +1,6 @@
 ﻿namespace EShopMicroservice.Ordering.Application.Orders.Queries.GetOrdersByName;
 
-public record GetOrdersByName(string Name)
+public record GetOrdersByNameQuery(string Name)
     : IQuery<GetOrdersByNameResult>;
 
 public record GetOrdersByNameResult(IEnumerable<OrderDto> Orders);
