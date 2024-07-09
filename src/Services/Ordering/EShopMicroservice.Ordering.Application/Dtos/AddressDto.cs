@@ -34,4 +34,17 @@ public record AddressDto(
             address.ZipCode
         );
     }
+
+    public static AddressDto FromBasketCheckoutEvent(BasketCheckoutEvent @event)
+    {
+        return new AddressDto(
+            @event.FirstName,
+            @event.LastName,
+            @event.EmailAddress,
+            @event.AddressLine,
+            @event.Country,
+            @event.State,
+            @event.ZipCode
+        );
+    }
 };

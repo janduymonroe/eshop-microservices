@@ -1,5 +1,4 @@
-﻿
-namespace EShopMicroservice.Ordering.Application.Orders.EventHandlers;
+﻿namespace EShopMicroservice.Ordering.Application.Orders.EventHandlers.Domain;
 
 public class OrderUpdatedEventHandler
     (ILogger<OrderCreatedEventHandler> logger)

@@ -23,5 +23,16 @@ public record PaymentDto(
             payment.PaymentMethod
         );
     }
+
+    public static PaymentDto FromBasketCheckoutEvent(BasketCheckoutEvent @event)
+    {
+        return new PaymentDto(
+            @event.CardHolderName,
+            @event.CardNumber,
+            @event.CardExpiration,
+            @event.CardSecurityNumber,
+            @event.PaymentMethod
+        );
+    }
 }
 

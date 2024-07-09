@@ -2,7 +2,7 @@
 
 public record OrderName
 {
-    private const int MaxLength = 5;
+    private const int MaxLength = 3;
     public string Value { get; }
     private OrderName(string value) => Value = value;
 

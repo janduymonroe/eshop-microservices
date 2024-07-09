@@ -1,7 +1,4 @@
-﻿using EShopMicroservice.Ordering.Application.Dtos;
-
-
-namespace EShopMicroservice.Ordering.Application.Orders.Commands.CreateOrder;
+﻿namespace EShopMicroservice.Ordering.Application.Orders.Commands.CreateOrder;
 
 public sealed class CreateOrderHandler(IApplicationDbContext dbContext) 
     : ICommandHandler<CreateOrderCommand, CreateOrderResult>
@@ -17,15 +14,19 @@ public sealed class CreateOrderHandler(IApplicationDbContext dbContext)
         return new CreateOrderResult(order.Id.Value);
     }
 
-    private Order CreateNewOrder(OrderDto order)
+    private Order CreateNewOrder(OrderDto orderDto)
     {
-        return Order.Create(
+        var order = Order.Create(
                 id: OrderId.Of(Guid.NewGuid()),
-                customerId: CustomerId.Of(order.CustomerId),
-                orderName: OrderName.Of(order.OrderName),
-                shippingAddress: order.ShippingAddress.ToValueObject(),
-                billingAddress: order.BillingAddress.ToValueObject(),
-                payment: order.Payment.ToValueObject()
+                customerId: CustomerId.Of(orderDto.CustomerId),
+                orderName: OrderName.Of(orderDto.OrderName),
+                shippingAddress: orderDto.ShippingAddress.ToValueObject(),
+                billingAddress: orderDto.BillingAddress.ToValueObject(),
+                payment: orderDto.Payment.ToValueObject()
             );
+
+        orderDto.OrderItems.ForEach(x => order.AddOrderItem(ProductId.Of(x.ProductId), x.Quantity, x.Price));
+
+        return order;
     }
 }

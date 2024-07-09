@@ -8,3 +8,5 @@ global using EShopMicroservice.Ordering.Application.Exceptions;
 global using EShopMicroservice.Ordering.Domain.Events;
 global using MediatR;
 global using Microsoft.Extensions.Logging;
+global using BuildingBlocks.Messaging.Events;
+global using MassTransit;

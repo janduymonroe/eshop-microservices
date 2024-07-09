@@ -10,3 +10,4 @@ global using BuldingBlocks.Exceptions;
 global using EShopMicroservice.Basket.Api.Exception;
 global using EShopMicroservice.Basket.Api.Data;
 global using BuldingBlocks.Exceptions.Handler;
+global using EShopMicroservice.Basket.Api.Dtos;

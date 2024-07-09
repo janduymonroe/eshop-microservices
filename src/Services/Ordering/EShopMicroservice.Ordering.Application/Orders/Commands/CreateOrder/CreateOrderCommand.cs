@@ -1,6 +1,4 @@
-﻿using BuldingBlocks.CQRS;
-using EShopMicroservice.Ordering.Application.Dtos;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace EShopMicroservice.Ordering.Application.Orders.Commands.CreateOrder;
 

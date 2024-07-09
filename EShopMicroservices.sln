@@ -48,6 +48,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopMicroservice.Ordering.
 		{874EA5AC-7769-42F7-B410-07E359A73806} = {874EA5AC-7769-42F7-B410-07E359A73806}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Messaging", "src\BuildingBlocks\BuildingBlocks.Messaging\BuildingBlocks.Messaging.csproj", "{AB769ED2-708D-4ECF-828E-D2E4B328D811}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,10 @@ Global
 		{5B68932E-B94B-4C05-BFB8-0B63E2C9EDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B68932E-B94B-4C05-BFB8-0B63E2C9EDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B68932E-B94B-4C05-BFB8-0B63E2C9EDCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB769ED2-708D-4ECF-828E-D2E4B328D811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB769ED2-708D-4ECF-828E-D2E4B328D811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB769ED2-708D-4ECF-828E-D2E4B328D811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB769ED2-708D-4ECF-828E-D2E4B328D811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{0B73C6D5-478F-4BC5-B621-A909718C735A} = {A16A7A84-DA30-4956-BA02-492C17BD2C36}
 		{874EA5AC-7769-42F7-B410-07E359A73806} = {A16A7A84-DA30-4956-BA02-492C17BD2C36}
 		{5B68932E-B94B-4C05-BFB8-0B63E2C9EDCD} = {A16A7A84-DA30-4956-BA02-492C17BD2C36}
+		{AB769ED2-708D-4ECF-828E-D2E4B328D811} = {BFDCBB5F-D17F-4E1B-B73F-565A6677C1AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {211447F5-88C7-4BF3-8376-B2B493848159}
